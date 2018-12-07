@@ -80,7 +80,13 @@
     <ClInclude Include="string.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="capacity.cpp" />
+    <ClCompile Include="element access.cpp" />
+    <ClCompile Include="iterator.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="modifiers.cpp" />
+    <ClCompile Include="non-member function overloads.cpp" />
+    <ClCompile Include="string operations.cpp" />
     <ClCompile Include="string.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
