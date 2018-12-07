@@ -6,6 +6,7 @@
 #include<cmath>
 #include<string.h>
 #include<iterator>
+#include<iomanip>
 #define INITIAL_SIZE 15
 
 using namespace std;

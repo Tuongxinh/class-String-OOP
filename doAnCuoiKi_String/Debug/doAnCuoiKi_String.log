@@ -1,41 +1,37 @@
-﻿Build started 06-Dec-18 6:24:26 PM.
+﻿Build started 06-Dec-18 8:49:35 PM.
      1>Project "E:\lap trinh\doAnCuoiKi_String\doAnCuoiKi_String\doAnCuoiKi_String.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp string.cpp
-         main.cpp
-         Generating Code...
-         Compiling...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt string.cpp
          string.cpp
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(175): warning C4018: '<' : signed/unsigned mismatch
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(193): warning C4172: returning address of local variable or temporary
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(208): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(176): warning C4018: '<' : signed/unsigned mismatch
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(194): warning C4172: returning address of local variable or temporary
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(209): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(214): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(215): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(229): warning C4018: '<' : signed/unsigned mismatch
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(231): warning C4018: '<' : signed/unsigned mismatch
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(280): warning C4018: '<' : signed/unsigned mismatch
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(316): warning C4018: '<' : signed/unsigned mismatch
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(318): warning C4018: '<' : signed/unsigned mismatch
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(350): warning C4018: '<' : signed/unsigned mismatch
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(369): warning C4018: '<' : signed/unsigned mismatch
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(746): warning C4996: 'strrev': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strrev. See online help for details.
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(230): warning C4018: '<' : signed/unsigned mismatch
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(232): warning C4018: '<' : signed/unsigned mismatch
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(281): warning C4018: '<' : signed/unsigned mismatch
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(317): warning C4018: '<' : signed/unsigned mismatch
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(319): warning C4018: '<' : signed/unsigned mismatch
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(351): warning C4018: '<' : signed/unsigned mismatch
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(370): warning C4018: '<' : signed/unsigned mismatch
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(747): warning C4996: 'strrev': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strrev. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(257) : see declaration of 'strrev'
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(748): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(749): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(750): warning C4996: 'strrev': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strrev. See online help for details.
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(751): warning C4996: 'strrev': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strrev. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(257) : see declaration of 'strrev'
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(775): warning C4996: 'strrev': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strrev. See online help for details.
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(776): warning C4996: 'strrev': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strrev. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(257) : see declaration of 'strrev'
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(793): warning C4018: '>=' : signed/unsigned mismatch
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(800): warning C4018: '<' : signed/unsigned mismatch
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(889): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(794): warning C4018: '>=' : signed/unsigned mismatch
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(801): warning C4018: '<' : signed/unsigned mismatch
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(890): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(908): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(909): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(920): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
-         Generating Code...
-     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(621): warning C4717: 'String::append' : recursive on all control paths, function will cause runtime stack overflow
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(921): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>e:\lap trinh\doancuoiki_string\doancuoiki_string\string.cpp(622): warning C4717: 'String::append' : recursive on all control paths, function will cause runtime stack overflow
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\lap trinh\doAnCuoiKi_String\Debug\doAnCuoiKi_String.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\lap trinh\doAnCuoiKi_String\Debug\doAnCuoiKi_String.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\lap trinh\doAnCuoiKi_String\Debug\doAnCuoiKi_String.lib" /MACHINE:X86 Debug\main.obj
          Debug\string.obj
@@ -44,4 +40,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.02
+Time Elapsed 00:00:00.93

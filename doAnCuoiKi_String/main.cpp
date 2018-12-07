@@ -1,5 +1,52 @@
 #include"string.h"
 
+void testCapacity(String x)
+{
+	
+	int input;
+	char ch;
+	cout << "\n-------------------------- CAPACITY --------------------------" << endl;
+	cout << "\n***** Test str: " << x;
+	cout << "\nSize: " << x.size();
+	cout << "\nLength:"  << x.length();
+	cout << "\nMax_size: "  << x.max_size();
+	cout << "\nCapacity: "  << x.capacity();
+	//
+
+	cout << "\nResize: ";
+	cout << "\n\t1. void resize (size_t n)";
+	cout << "\n\t\t- Input new string length: ";
+	cin >> input; 
+	x.resize(input);
+	cout << "\n\t\t- After use ( void resize (size_t n) )        length = " << x.length()  << "\t\tstr = " << x;
+	cout << "\n\n\t2. void resize (size_t n, char c)";
+	cout << "\n\t\t- Input new string length: "; cin >> input;
+	cout << "\n\t\t- Resize  the string to a length of ???? characters: "; 
+	cin >> ch;
+	x.resize(input, ch);
+	cout << "\n\t\t- After use ( void resize (size_t n, char c) )        length = " <<x.length()<< "\t\tstr = " << x;
+ 
+		
+
+	//
+	cout << "\nReserve: "; cout << "\n\t-New string capacity: "; cin >> input; x.reserve(input);
+	cout << "\n\t-After reserve, capacity = " << x.capacity();
+	//
+	
+	//
+	cout << "\nIs string empty: " << x.empty();
+	cout << "\nShrink to fit: ";
+	x.shrink_to_fit();
+	cout << "\t\tLength = " << x.length();
+	cout << "\t\tCapacity = " << x.capacity();
+	//
+	cout << "\nClear: ";
+	x.clear();
+	cout << "\n\t- After clear, str = " << x;
+	cout << "\t\tlength = " << x.length();
+	cout << "\t\tcapacity = " << x.capacity();
+
+}
 void main()
 {
 
@@ -45,17 +92,17 @@ void main()
 	y.back() = '!';
 	cout << y.data();*/
 
-	
-	
-//int 	sz= x.length();
-//cout << sz << endl;
-//cout << "capacity: " << x.capacity()<<endl;
-//x.resize(sz+2,'+');
-//cout << x.data() << endl;
-//cout << "new len:" << x.length() << endl;
-	
+
+
+	//int 	sz= x.length();
+	//cout << sz << endl;
+	//cout << "capacity: " << x.capacity()<<endl;
+	//x.resize(sz+2,'+');
+	//cout << x.data() << endl;
+	//cout << "new len:" << x.length() << endl;
+
 	/*String x("liu tuong");
-	
+
 	cout << x.data()<<endl;
 	cout << "\nlen: " << x.length();
 	cout << "\ncapa: " << x.capacity();
@@ -78,24 +125,19 @@ void main()
 	int kq = x.find_first_not_of("abcdefghijklmnopqrstuvwxyz ");
 	cout << kq;*/
 
-	
+
 	/*String x(" Doing Insert test here");
 	String y("@.@");
-	
+
 	x.insert(6,y,0,3);
 	cout << x.length();
 	cout << x.data();*/
-	
+
 	/*String x("Lieu Tuong");
 	String t("Lion");
 	x.replace(5, 5, t);
 	cout << x.data();*/
+	String str1("test capacity");
+	testCapacity(str1);
 
-	String x("Lieu Tuong");
-	
-	String::iterator it = x.begin();
-	for (it; it != x.end(); it++)
-	{
-		cout << (*it);
-	}
 }

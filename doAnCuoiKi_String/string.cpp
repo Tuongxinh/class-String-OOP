@@ -3,7 +3,7 @@
 void String::constructor()
 {
 	this->mLength = 0;
-	this->mCapacity = INITIAL_SIZE;
+	this->mCapacity = 0;
 	str = emptyStr;
 }
 
@@ -98,10 +98,11 @@ char* String::data(){ return str; }
 
 void String::clear()
 {
-	mLength = mCapacity = 0;
+	
 	if (str != NULL)
 	{
-		delete[]str;
+		mLength = 0;
+		delete[] str;
 	}
 	str = emptyStr;
 }
