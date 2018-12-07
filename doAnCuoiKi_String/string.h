@@ -1,5 +1,7 @@
+#define _CRT_SECURE_NO_WARNIGNS
 #ifndef __STRING_H__
 #define __STRING_H__
+
 #include <algorithm>
 #include<limits>
 #include<iostream>
@@ -7,6 +9,8 @@
 #include<string.h>
 #include<iterator>
 #include<iomanip>
+#include"iterator.h"
+
 #define INITIAL_SIZE 15
 
 using namespace std;
@@ -57,106 +61,23 @@ public:
 
 	//Iterators
 
-	class iterator
-	{
-	protected:
-		char* current;
-	public:
-		
-
-		iterator(char* initLoc=0) :current(initLoc){}
-
-		iterator& operator++()
-		{
-			++current;
-			return *this;
-		}
-
-		iterator operator++(int unused)
-		{
-			iterator oldData(*this);
-			++current;
-			return oldData;
-		}
-
-		bool operator==(const iterator& rhs)const { return current == rhs.current; }
-		
-		bool operator!=(const iterator& rhs)const { return current != rhs.current; }
-		
-		char& operator*(){ return *current; }
-
-		char* operator->(){ return current; }
-
-
-		
-		~iterator(){ delete current; }
-	};
-	//
-	class const_iterator
-	{
-	protected:
-		char* current;
-	public:
 	
+	CT::iterator begin();
+	const CT::const_iterator begin()const;
 
-		const_iterator(char* initLoc=0) :current(initLoc){}
+	CT::iterator end();
+	const CT::const_iterator end()const;
 
-		const_iterator operator++()
-		{
-			++current;
-			return *this;
-		}
+	CT::reverse_iterator rbegin();
+	const CT::const_reverse_iterator rbegin() const;
 
-		const_iterator operator++(int unused)
-		{
-			const_iterator oldData(*this);
-			++current;
-			return oldData;
-		}
+	CT::reverse_iterator rend();
+	const CT::const_reverse_iterator rend() const;
 
-		const char& operator*(){ return *current; }
-
-		const char* operator->(){ return current; }
-
-		bool operator==(const const_iterator& rhs)const { return current == rhs.current; }
-
-		bool operator!=(const const_iterator& rhs)const { return current != rhs.current; }
-
-		~const_iterator(){ delete current; }
-	};
-	//
-	class reverse_iterator:public iterator
-	{
-	public:
-		//reverse_iterator() :iterator(){};
-
-		reverse_iterator(char* initLoc=0) :iterator(initLoc){}
-	};
-	//
-	class const_reverse_iterator :public const_iterator
-	{
-	public:
-		//const_reverse_iterator() :const_iterator(){}
-
-		const_reverse_iterator(char* initLoc=0) :const_iterator(initLoc){}
-	};
-
-	iterator begin();
-	const const_iterator begin()const;
-
-	iterator end();
-	const const_iterator end()const;
-
-	reverse_iterator rbegin();
-	const const_reverse_iterator rbegin() const;
-
-	reverse_iterator rend();
-	const const_reverse_iterator rend() const;
-
-	/*const_iterator cbegin() const noexcept;
-	const_iterator cend() const noexcept;
-	const_reverse_iterator crbegin() const noexcept;
-	const_reverse_iterator crend() const noexcept;*/
+	CT::const_iterator cbegin() const noexcept;
+	CT::const_iterator cend() const noexcept;
+	CT::const_reverse_iterator crbegin() const noexcept;
+	CT::const_reverse_iterator crend() const noexcept;
 
 	//string operator
 	size_t find(const String&, size_t pos = 0)const;

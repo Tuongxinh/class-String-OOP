@@ -1,3 +1,4 @@
+
 #include"string.h"
 
 void testCapacity(String x)
@@ -138,6 +139,10 @@ void main()
 	x.replace(5, 5, t);
 	cout << x.data();*/
 	String str1("test capacity");
-	testCapacity(str1);
+	CT::iterator i = str1.begin();
+	for (i; i != str1.end(); i++)
+	{
+		cout << *i;
+	}
 
 }

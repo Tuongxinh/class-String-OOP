@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include"string.h"
 
 void String::constructor()
@@ -87,7 +88,7 @@ String::String(size_t size, char c)
 
 String::~String()
 {
-	delete[] str;
+	/*delete[] str;*/
 }
 
 bool String::empty(){ return (this->size() == 0); }
@@ -173,7 +174,7 @@ size_t String::find(char c, size_t pos)const
 	if (c == '\0'){ return pos > mLength ? npos : pos; }
 	if (mLength == 0 || pos > mLength -1){ return npos; }
 
-	for (int i = pos; i < mLength; i++)
+	for (size_t i = pos; i < mLength; i++)
 	{
 		if (str[i] == c){ return i; }
 	}
@@ -227,9 +228,9 @@ size_t String::find_first_of(const char* inputStr, size_t pos) const
 	if (*inputStr == '\0'){ return pos > mLength ? npos : pos; }
 	if (pos > mLength - 1 || mLength == 0){ return npos; }
 
-	for (int i = pos; i < mLength; i++)
+	for (size_t i = pos; i < mLength; i++)
 	{
-		for (int j = 0; j < strlen(inputStr); j++)
+		for (size_t j = 0; j < strlen(inputStr); j++)
 		{
 			if (str[i] == inputStr[j])
 			{
@@ -276,9 +277,9 @@ size_t String::find_last_of(const String& inputStr, size_t pos)const
 		pos = mLength - 1;
 	}
 
-	for (int i = pos; i >= 0; i--)
+	for (size_t i = pos; i >= 0; i--)
 	{
-		for (int j = 0; j < strlen(inputStr.str); j++)
+		for (size_t j = 0; j < strlen(inputStr.str); j++)
 		{
 			if (str[i] == inputStr[j])
 			{
@@ -314,9 +315,9 @@ size_t String::find_first_not_of(const String& s, size_t pos ) const
 {
 	if (s == NULL || pos>mLength - 1){ return npos; }
 	size_t count = 0;
-	for (int i = pos; i < mLength; i++)
+	for (size_t i = pos; i < mLength; i++)
 	{
-		for (int j = 0; j < s.length(); j++)
+		for (size_t j = 0; j < s.length(); j++)
 		{
 			if (str[i] != s[j])
 			{
@@ -348,7 +349,7 @@ size_t String::find_first_not_of(const char* s, size_t pos, size_t n) const
 size_t String::find_first_not_of(char c, size_t pos) const
 {
 	if (c == NULL || pos > mLength - 1){ return npos; }
-	for (int i = 0; i < mLength; i++)
+	for (size_t i = 0; i < mLength; i++)
 	{
 		if (str[i] != c)
 		{
@@ -365,9 +366,9 @@ size_t String::find_last_not_of(const String& s, size_t pos ) const
 	if (pos>mLength - 1 || pos == npos){ pos = mLength - 1; }
 
 	size_t count = 0;
-	for (int i = pos; i >=0; i--)
+	for (size_t i = pos; i >=0; i--)
 	{
-		for (int j = 0; j < s.length(); j++)
+		for (size_t j = 0; j < s.length(); j++)
 		{
 			if (str[i] != s[j])
 			{
@@ -744,11 +745,11 @@ size_t String::rfind(const String& inputStr, size_t pos) const
 	}
 	String tmp(str, 0, pos);
 
-	strrev(tmp.str);
+	_strrev(tmp.str);
 	char* tmpInputStr = new char[inputStr.length() + 1];
 	strcpy(tmpInputStr, inputStr.str);
 
-	size_t idx_rfind = tmp.find(strrev(tmpInputStr));
+	size_t idx_rfind = tmp.find(_strrev(tmpInputStr));
 	if (idx_rfind == npos){ return npos; }
 
 	delete[] tmpInputStr;
@@ -773,7 +774,7 @@ size_t String::rfind(char c, size_t pos) const
 	if (pos > mLength || pos == npos){ pos = mLength; }
 		
 	String newStr(str, 0, pos);
-	strrev(newStr.str);
+	_strrev(newStr.str);
 	int idx_find = newStr.find(c);
 	if (idx_find == npos){ return npos; }
 	return newStr.mLength - idx_find - 1;
@@ -783,8 +784,8 @@ size_t String::rfind(char c, size_t pos) const
 
 String& String::INSERT(size_t pos, const char* s)
 {
-	int i = mLength;
-	int j;
+	size_t i = mLength;
+	size_t j;
 
 	this->resize(mLength + strlen(s));
 
@@ -798,7 +799,7 @@ String& String::INSERT(size_t pos, const char* s)
 	}
 
 	j = 0;
-	for (int i = pos; i < pos + strlen(s); i++)
+	for (size_t i = pos; i < pos + strlen(s); i++)
 	{
 		str[i] = s[j];
 		j++;
@@ -918,68 +919,83 @@ String& String::replace(size_t pos, size_t len, const char* s, size_t n)
 
  bool operator<  (const String& lhs, const String& rhs)
  {
-	 return lhs.compare(rhs);
+	 if (strcmp(lhs.str, rhs.str) == -1)return true;
+	 return false;
  }
 
  bool operator<  (const char*   lhs, const String& rhs)
  {
-	 return strcmp(lhs, rhs.str)==-1;
+	 if (strcmp(lhs, rhs.str) == -1)return true;
+	 return false;
  }
 
  bool operator<  (const String& lhs, const char*   rhs)
  {
-	 return strcmp(lhs.str, rhs) == -1;
+	 if (strcmp(lhs.str, rhs) == -1)return true;
+	 return false;
  }
 
  bool operator<= (const String& lhs, const String& rhs)
  {
-	 if (lhs.str == rhs.str){ return 1; }
-	 return strcmp(lhs.str, rhs.str) == -1;
+	 if (lhs.str == rhs.str){ return true; }
+	 if( strcmp(lhs.str, rhs.str) ==-1)return true;
+	 return false;
  }
 
  bool operator<= (const char*   lhs, const String& rhs)
  {
-	 if (lhs == rhs.str){ return 1; }
-	 return strcmp(lhs, rhs.str) == -1;
+	 if (lhs == rhs.str){ return true; }
+	 if (strcmp(lhs, rhs.str) == -1)return true;
+	 return false;
  }
 
  bool operator<= (const String& lhs, const char*   rhs)
  {
-	 if (lhs.str == rhs){ return 1; }
-	 return strcmp(lhs.str, rhs) == -1;
+	 if (lhs.str == rhs){ return true; }
+	 if (strcmp(lhs.str, rhs) == -1)return true;
+	 return false;
  }
 
  bool operator>  (const String& lhs, const String& rhs)
  {
-	 return strcmp(lhs.str, rhs.str) == 1;
+	 if (lhs.str == rhs.str){ return true; }
+	 if (strcmp(lhs.str, rhs.str) == 1)return true;
+	 return false;
  }
 
  bool operator>  (const char*   lhs, const String& rhs)
  {
-	 return strcmp(lhs, rhs.str) == 1;
+	 if (lhs == rhs.str){ return true; }
+	 if (strcmp(lhs, rhs.str) == -1)return true;
+	 return false;
  }
 
  bool operator>  (const String& lhs, const char*   rhs)
  {
-	 return strcmp(lhs.str, rhs) == 1;
+	 if (lhs.str == rhs){ return true; }
+	 if (strcmp(lhs.str, rhs) == -1)return true;
+	 return false;
  }
 
  bool operator>= (const String& lhs, const String& rhs)
  {
-	 if (lhs.str == rhs.str){ return 1; }
-	 return strcmp(lhs.str, rhs.str) == 1;
+	 if (lhs.str == rhs.str){ return true; }
+	 if (strcmp(lhs.str, rhs.str) == -1)return true;
+	 return false;
  }
 
  bool operator>= (const char*   lhs, const String& rhs)
  {
-	 if (lhs == rhs.str){ return 1; }
-	 return strcmp(lhs, rhs.str) == 1;
+	 if (lhs == rhs.str){ return true; }
+	 if (strcmp(lhs, rhs.str) == -1)return true;
+	 return false;
  }
 
  bool operator>= (const String& lhs, const char*   rhs)
  {
-	 if (lhs.str == rhs){ return 1; }
-	 return strcmp(lhs.str, rhs) == 1;
+	 if (lhs.str == rhs){ return true; }
+	 if (strcmp(lhs.str, rhs) == -1)return true;
+	 return false;
  }
 
  void swap(String& x, String& y)
@@ -987,44 +1003,62 @@ String& String::replace(size_t pos, size_t len, const char* s, size_t n)
 	 x.swap(y);
  }
 
- String::iterator String::begin()
+ 
+ CT::iterator String::begin()
  {
-	 return iterator(str);
+	 return CT::iterator(str);
  }
 
-  const String:: const_iterator String::begin()const
+ const  CT::const_iterator String::begin()const
  {
 	 return str;
  }
 
-  String::iterator String::end()
+ CT::iterator String::end()
   {
-	  return iterator(str + mLength);
+	  return CT::iterator(str + mLength);
   }
 
-  const String::const_iterator String::end()const
+ const CT::const_iterator String::end()const
   {
 	  return str + mLength;
   }
 
-  String::reverse_iterator String::rbegin()
+ CT::reverse_iterator String::rbegin()
   {
-	  return reverse_iterator(str + mLength - 1);
+	  return CT::reverse_iterator(str + mLength - 1);
   }
 
-  const String::const_reverse_iterator String::rbegin() const
+ const CT::const_reverse_iterator String::rbegin() const
   {
 	  return str + mLength - 1;
   }
 
-  String::reverse_iterator String::rend()
+ CT::reverse_iterator String::rend()
   {
-	  return reverse_iterator(str - 1);
+	  return CT::reverse_iterator(str - 1);
   }
 
-  const String::const_reverse_iterator String::rend() const
+ const CT::const_reverse_iterator String::rend() const
   {
 	  return str - 1;
   }
 
- 
+ CT::const_iterator String::cbegin() const noexcept
+ {
+	 return str;
+ }
+
+ CT::const_iterator String::cend() const noexcept
+ {
+	 return str + mLength;
+ }
+
+ CT::const_reverse_iterator String::crbegin() const noexcept
+ {
+	 return str + mLength - 1;
+ }
+ CT::const_reverse_iterator String::crend() const noexcept
+ {
+	 return str - 1;
+ }
